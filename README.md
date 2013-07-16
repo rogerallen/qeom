@@ -2,7 +2,7 @@
 
 lein run <i>number</i>
 
-0 &lt;= <i>number</i> &lt;= 2
+0 &lt;= <i>number</i> &lt;= 3
 ## License
 
 Copyright © 2013 Roger Allen

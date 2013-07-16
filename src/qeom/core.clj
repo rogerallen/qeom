@@ -2,7 +2,7 @@
   (:gen-class))
 
 (defn -main
-  " accept a number on the commandline and use that to load and run a sketch."
+  "accept a number on the commandline and use that to load and run a sketch."
   [& args]
   ;; work around dangerous default behaviour in Clojure
   (alter-var-root #'*read-eval* (constantly false))
