@@ -2,12 +2,19 @@
 
 art via [quil](https://github.com/quil/quil) inspired by [geometrydaily](http://geometrydaily.tumblr.com/).
 
-## Usage
+### Usage
 
 lein run <i>number</i>
 
 0 &lt;= <i>number</i> &lt;= 4
-## License
+
+### Screenshots
+
+[2](http://rogerallen.tumblr.com/post/55583059224/https-github-com-rogerallen-qeom-lein-run-2), 
+[3](http://rogerallen.tumblr.com/post/55601677111/https-github-com-rogerallen-qeom-lein-run-3),
+[4](http://rogerallen.tumblr.com/post/55690966660/https-github-com-rogerallen-qeom-lein-run-4)
+
+### License
 
 Copyright © 2013 Roger Allen
 
