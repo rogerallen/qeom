@@ -28,10 +28,8 @@
         y (* 10 (random (/ (height) 10)))]
     (prim x y w rot)))
 
-(defn run []
-  (defsketch doodle
-  :title "q001"
-  :setup setup
-  :draw draw
-  :size [900 900])
+(defn run [title]
+  (defsketch doodle :title (str title) :setup setup :draw draw :size [900 900])
   nil)
+
+;;(run (second (clojure.string/split (str *ns*) #"\.")))

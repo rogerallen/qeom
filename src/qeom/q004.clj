@@ -35,12 +35,8 @@
         (line x y x 750)
         (recur (dec i) xn yn dn)))))
 
-(defn run []
-  (defsketch doodle
-  :title (second (clojure.string/split (str *ns*) #"\."))
-  :setup setup
-  :draw draw
-  :size [900 900])
+(defn run [title]
+  (defsketch doodle :title (str title) :setup setup :draw draw :size [900 900])
   nil)
 
-;;(run)
+;;(run (second (clojure.string/split (str *ns*) #"\.")))

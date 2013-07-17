@@ -25,12 +25,8 @@
         (rect x0 y0 400 20)
         (rect y0 x0 20 400)))))
 
-(defn run []
-  (defsketch doodle
-  :title (second (clojure.string/split (str *ns*) #"\."))
-  :setup setup
-  :draw draw
-  :size [900 900])
+(defn run [title]
+  (defsketch doodle :title (str title) :setup setup :draw draw :size [900 900])
   nil)
 
-;;(run)
+;;(run (second (clojure.string/split (str *ns*) #"\.")))

@@ -7,16 +7,17 @@
   ;; work around dangerous default behaviour in Clojure
   (alter-var-root #'*read-eval* (constantly false))
   ;; run the appropriate sketch
-  (let [nstr (if (> (count args) 0)
-               (first args)
-               "0")
-        n    (try (read-string nstr)
-                  (catch NumberFormatException e 0))
-        f-ns (str "qeom.q" (format "%03d" n))
-        _    (try
-               (require (symbol f-ns))
-               (catch java.io.FileNotFoundException e nil))
-        func (resolve (symbol f-ns "run"))]
+  (let [nstr     (if (> (count args) 0)
+                   (first args)
+                   "0")
+        n        (try (read-string nstr)
+                      (catch NumberFormatException e 0))
+        n-ns-str (format "q%03d" n)
+        f-ns     (str "qeom." n-ns-str)
+        _        (try
+                   (require (symbol f-ns))
+                   (catch java.io.FileNotFoundException e nil))
+        func     (resolve (symbol f-ns "run"))]
     (if func
-      (func)
+      (func n-ns-str)
       (println (format "unable to find: %s or %s/run" f-ns f-ns)))))

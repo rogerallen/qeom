@@ -1,4 +1,4 @@
-;; simple example from website
+;; simple example from quil website
 (ns qeom.q000
   (:use quil.core))
 
@@ -17,10 +17,8 @@
         y    (random (height))]
     (ellipse x y diam diam)))
 
-(defn run []
-  (defsketch example
-  :title "Oh so many grey circles"
-  :setup setup
-  :draw draw
-  :size [900 900])
+(defn run [title]
+  (defsketch doodle :title (str title) :setup setup :draw draw :size [900 900])
   nil)
+
+;;(run (second (clojure.string/split (str *ns*) #"\.")))
