@@ -10,7 +10,8 @@ lein run <i>number</i>
 
 ### Screenshots
 
-[2](http://rogerallen.tumblr.com/post/55583059224/https-github-com-rogerallen-qeom-lein-run-2), 
+[1](http://rogerallen.tumblr.com/post/55780890540/https-github-com-rogerallen-qeom-lein-run-1),
+[2](http://rogerallen.tumblr.com/post/55583059224/https-github-com-rogerallen-qeom-lein-run-2),
 [3](http://rogerallen.tumblr.com/post/55601677111/https-github-com-rogerallen-qeom-lein-run-3),
 [4](http://rogerallen.tumblr.com/post/55690966660/https-github-com-rogerallen-qeom-lein-run-4)
 
