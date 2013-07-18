@@ -19,7 +19,7 @@
 
 (defn prims
   [x y]
-  (doall
+  (dorun
    (doseq [sfn (if (random-bool) [first second] [second first])]
      (let [rot (sfn [0 PI])
            col (sfn [[128 64 52] [166 184 166]])]
@@ -32,10 +32,12 @@
   ;;(stroke (random 255))
   (stroke-weight 0)
   (random-seed (int (/ (millis) 10000)))
-  (doall
-   (map (fn [[i j]] (prims (* i (* (Math/sqrt 3) 26)) (* j 26)))
-        (filter (fn [[i j]] (= 1 (mod (+ i j) 2)))
-                (for [i (range 16) j (range (dec (* (Math/sqrt 3) 16)))] [i j])))))
+  (dorun
+   (->>
+    (for [i (range 16) j (range (dec (* (Math/sqrt 3) 16)))] [i j])
+    (filter (fn [[i j]] (= 1 (mod (+ i j) 2))))
+    (map (fn [[i j]] (prims (* i (* (Math/sqrt 3) 26)) (* j 26)))))))
+
 
 (defn run [title]
   (defsketch doodle :title (str title) :setup setup :draw draw :size [900 900])
