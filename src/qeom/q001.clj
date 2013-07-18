@@ -29,7 +29,7 @@
 (defn draw []
   (background 230)
   (translate 100 100)
-  ;;(stroke (random 255))
+  (stroke 0 0)
   (stroke-weight 0)
   (random-seed (int (/ (millis) 10000)))
   (dorun
