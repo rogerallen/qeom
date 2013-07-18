@@ -22,40 +22,36 @@
   (map #(int (* 255 (* v (mix 1.0 (clamp (- (abs (- (* 6.0 (fract (+ h (/ % 3.0)))) 3.0)) 1.0) 0.0 1.0) s))))
        [3.0 2.0 1.0]))
 
+(defn random-int [a b]
+  (int (random a b)))
+
 (defn draw []
   (let [ms0 (/ (millis) 10000.0)]
-    (random-seed (int ms0))
+    (random-seed (+ (day) (minute)))
     (background 230)
     (translate 450 450)
     (fill 255 0)
     (stroke-weight 3)
 
     (apply stroke (hsv2rgb 0.5 0.5 0.5))
-    (ellipse 0 0 100 100)
-
-    (push-matrix)
-
-    ;; FIXME Work in Progress
-    (rotate (+ ms0 (* 0.333 TWO-PI)))
-    (translate 25 0)
-    (rotate (+ ms0 (* 0.333 TWO-PI)))
-    (apply stroke (hsv2rgb 0.1 0.5 0.5))
-    (ellipse 0 0 150 150)
-
-    (translate -75 0)
-    (rotate (+ ms0 (* 0.333 TWO-PI)))
-    (apply stroke (hsv2rgb 0.3 0.5 0.5))
     (ellipse 0 0 300 300)
 
-    (translate 75 0)
+    (push-matrix)
     (rotate (+ ms0 (* 0.333 TWO-PI)))
-    (apply stroke (hsv2rgb 0.7 0.5 0.5))
-    (ellipse 0 0 450 450)
+
+    (loop [d0 300 d1 600]
+      (let [d2 (random-int (+ d0 50) (/ (+ d0 d1) 2))]
+        (when (< (+ d2 20) d1)
+          (translate (/ (- d2 d0) 2) 0)
+          (rotate (+ ms0 (* (random 0.0 1.0) TWO-PI)))
+          (apply stroke (hsv2rgb (random 0.0 1.0) 0.5 0.25))
+          (ellipse 0 0 d2 d2)
+          (recur d2 d1))))
 
     (pop-matrix)
 
-    (apply stroke (hsv2rgb 0.9 0.5 0.5))
-    (ellipse 0 0 500 500)))
+    (apply stroke (hsv2rgb 0.9 0.5 0.25))
+    (ellipse 0 0 600 600)))
 
 (defn run [title]
   (defsketch doodle :title (str title) :setup setup :draw draw :size [900 900])
