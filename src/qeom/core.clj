@@ -9,7 +9,7 @@
   ;; run the appropriate sketch
   (let [nstr     (if (> (count args) 0)
                    (first args)
-                   "2")
+                   "1")
         n        (try (read-string nstr)
                       (catch NumberFormatException e 0))
         n-ns-str (format "q%03d" n)
