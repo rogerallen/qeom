@@ -6,7 +6,7 @@ art via [quil](https://github.com/quil/quil) inspired by [geometrydaily](http://
 
 lein run <i>number</i>
 
-0 &lt;= <i>number</i> &lt;= 5
+0 &lt;= <i>number</i> &lt;= 6
 
 ### Screenshots
 
@@ -14,7 +14,8 @@ lein run <i>number</i>
 [2](http://rogerallen.tumblr.com/post/55583059224/https-github-com-rogerallen-qeom-lein-run-2),
 [3](http://rogerallen.tumblr.com/post/55601677111/https-github-com-rogerallen-qeom-lein-run-3),
 [4](http://rogerallen.tumblr.com/post/55690966660/https-github-com-rogerallen-qeom-lein-run-4),
-[5](http://rogerallen.tumblr.com/post/55869919139/https-github-com-rogerallen-qeom-lein-run-5)
+[5](http://rogerallen.tumblr.com/post/55869919139/https-github-com-rogerallen-qeom-lein-run-5),
+[6](http://rogerallen.tumblr.com/post/55965207040/https-github-com-rogerallen-qeom-lein-run-6)
 
 ### License
 
