@@ -28,12 +28,16 @@
   (smooth)
   (frame-rate 30))
 
-(defn draw1 [ij]
+(defn draw1 [ms ij]
   (let [[x y] (map #(* % 200) ij)
         d3 (random-int 4 18)
         d2 (random-int 3 (dec d3))
         d1 (random-int 2 (dec d2))
         [d1 d2 d3] (map #(* 10 %) [d1 d2 d3])
+        t (fract ms)
+        s (- 1.0 t)
+        s (* s s)
+        [d1 d2 d3] (map #(+ % (* 10 s (sin (+ x y (* 20 TWO-PI t))))) [d1 d2 d3])
         c1 (hsv2rgb (random 0.0 1.0) 0.1 0.1)
         c2 (hsv2rgb (random 0.0 0.4) 0.3 0.3)
         c3 (hsv2rgb (random 0.1 0.5) 0.6 0.6)]
@@ -45,15 +49,16 @@
     (ellipse x y d1 d1)))
 
 (defn draw []
-  (random-seed (+ (day) (minute) (/ (seconds) 5)))
-  (background 230)
-  (stroke-weight 0)
-  (stroke 0 0)
-  (translate 150 150)
-  (dorun
-   (->>
-    (for [i (range 4) j (range 4)] [i j])
-    (map draw1))))
+  (let [ms (/ (millis) 10000.0)]
+    (random-seed (+ (day) ms))
+    (background 230)
+    (stroke-weight 0)
+    (stroke 0 0)
+    (translate 150 150)
+    (dorun
+     (->>
+      (for [i (range 4) j (range 4)] [i j])
+      (map (partial draw1 ms))))))
 
 (defn run [title]
   (defsketch doodle :title (str title) :setup setup :draw draw :size [900 900])
