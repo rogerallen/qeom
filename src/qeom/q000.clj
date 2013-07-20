@@ -4,8 +4,14 @@
 (ns qeom.q000
   (:use quil.core))
 
+(defn fract [v]
+  (- v (int v)))
+
 (defn random-int [a b]
   (int (random a b)))
+
+(defn random-bool []
+  (= 1 (int (random 0 2))))
 
 (defn setup []
   (smooth)
@@ -20,20 +26,25 @@
     2 (fill  63  68  71)
     3 (fill 220)))
 
-(defn random-xy []
-  (* 10 (random-int 0 90)))
+(defn random-xy [d]
+  (let [rf (if (random-bool) + -)]
+    (rf (* 10 (random-int 0 90)) d)))
 
 (defn draw []
-  (background 220)
-  (random-seed (+ (day) (int (/ (millis) 10000))))
-  (dotimes [i 1000]
-    (random-fill)
-    (ellipse (random-xy) (random-xy) 90 90))
-  (fill 220)
-  (rect   0   0 100 900)
-  (rect   0   0 900 100)
-  (rect 800   0 100 900)
-  (rect   0 800 900 100))
+  (let [ms (/ (millis) 10000)
+        t (- 1.0 (fract ms))
+        t (* t t)
+        d (+ 90 (* 25 t))]
+    (background 220)
+    (random-seed (+ (day) ms))
+    (dotimes [i 700]
+      (random-fill)
+      (ellipse (random-xy d) (random-xy d) d d))
+    (fill 220)
+    (rect   0   0 100 900)
+    (rect   0   0 900 100)
+    (rect 800   0 100 900)
+    (rect   0 800 900 100)))
 
 (defn run [title]
   (defsketch doodle :title (str title) :setup setup :draw draw :size [900 900])
