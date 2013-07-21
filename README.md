@@ -10,6 +10,8 @@ lein run <i>number</i>
 
 ### Screenshots
 
+sketches are dynamic, but here is a taste:
+
 [0](http://rogerallen.tumblr.com/post/56060976624/https-github-com-rogerallen-qeom-lein-run-0),
 [1](http://rogerallen.tumblr.com/post/55780890540/https-github-com-rogerallen-qeom-lein-run-1),
 [2](http://rogerallen.tumblr.com/post/55583059224/https-github-com-rogerallen-qeom-lein-run-2),
