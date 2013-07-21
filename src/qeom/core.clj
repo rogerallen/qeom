@@ -9,7 +9,7 @@
   ;; run the appropriate sketch
   (let [nstr     (if (> (count args) 0)
                    (first args)
-                   "1")
+                   (str (rand-int 7)))
         n        (try (read-string nstr)
                       (catch NumberFormatException e 0))
         n-ns-str (format "q%03d" n)
@@ -19,5 +19,7 @@
                    (catch java.io.FileNotFoundException e nil))
         func     (resolve (symbol f-ns "run"))]
     (if func
-      (func n-ns-str)
+      (do
+        (println f-ns)
+        (func n-ns-str))
       (println (format "unable to find: %s or %s/run" f-ns f-ns)))))
