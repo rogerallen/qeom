@@ -7,7 +7,7 @@
   ;; work around dangerous default behaviour in Clojure
   (alter-var-root #'*read-eval* (constantly false))
   ;; run the appropriate sketch
-  (let [nstr     (if (> (count args) 0)
+  (let [nstr     (if (pos? (count args))
                    (first args)
                    (str (rand-int 7)))
         n        (try (read-string nstr)

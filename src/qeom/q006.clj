@@ -18,7 +18,7 @@
 (defn hsv2rgb
   "given hsv in [0.0,1.0] range, return rgb in [0,255] range"
   [h s v]
-  (map #(int (* 255 (* v (mix 1.0 (clamp (- (abs (- (* 6.0 (fract (+ h (/ % 3.0)))) 3.0)) 1.0) 0.0 1.0) s))))
+  (map #(int (* 255 v (mix 1.0 (clamp (- (abs (- (* 6.0 (fract (+ h (/ % 3.0)))) 3.0)) 1.0) 0.0 1.0) s)))
        [3.0 2.0 1.0]))
 
 (defn random-int [a b]
@@ -56,9 +56,8 @@
     (stroke 0 0)
     (translate 150 150)
     (dorun
-     (->>
-      (for [i (range 4) j (range 4)] [i j])
-      (map (partial draw1 ms))))))
+     (map (partial draw1 ms)
+          (for [i (range 4) j (range 4)] [i j])))))
 
 (defn run [title]
   (defsketch doodle :title (str title) :setup setup :draw draw :size [900 900])

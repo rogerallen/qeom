@@ -36,7 +36,7 @@
    (->>
     (for [i (range 16) j (range (dec (* (Math/sqrt 3) 16)))] [i j])
     (filter (fn [[i j]] (= 1 (mod (+ i j) 2))))
-    (map (fn [[i j]] (prims (* i (* (Math/sqrt 3) 26)) (* j 26)))))))
+    (map (fn [[i j]] (prims (* i (Math/sqrt 3) 26) (* j 26)))))))
 
 
 (defn run [title]

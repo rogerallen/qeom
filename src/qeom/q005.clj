@@ -15,7 +15,7 @@
 (defn hsv2rgb
   "given hsv in [0.0,1.0] range, return rgb in [0,255] range"
   [h s v]
-  (map #(int (* 255 (* v (mix 1.0 (clamp (- (abs (- (* 6.0 (fract (+ h (/ % 3.0)))) 3.0)) 1.0) 0.0 1.0) s))))
+  (map #(int (* 255 v (mix 1.0 (clamp (- (abs (- (* 6.0 (fract (+ h (/ % 3.0)))) 3.0)) 1.0) 0.0 1.0) s)))
        [3.0 2.0 1.0]))
 
 (defn random-int [a b]

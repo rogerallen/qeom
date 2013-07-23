@@ -21,7 +21,7 @@
     (let [x0 -200
           j (- (int (random 20)) 10)
           y0 (* 20 j)]
-      (if (= 0 (int (random 2)))
+      (if (zero? (int (random 2)))
         (rect x0 y0 400 20)
         (rect y0 x0 20 400)))))
 

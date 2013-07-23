@@ -24,7 +24,7 @@
          x (random-int 400 600)
          y (random-int 200 300)
          d (random-int 300 500)]
-    (when (and (> i 0) (< y 730) (> d 20))
+    (when (and (pos? i) (< y 730) (> d 20))
       (let [dn (int (* d (+ (/ 0.25 (sq i)) (random 0.4 0.8))))
             pm (if (random-bool) - +)
             xn (pm x (/ dn 2))
