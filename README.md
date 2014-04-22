@@ -6,7 +6,7 @@ art via [quil](https://github.com/quil/quil) inspired by [geometrydaily](http://
 
 lein run <i>number</i>
 
-0 &lt;= <i>number</i> &lt;= 6
+0 &lt;= <i>number</i> &lt;= 7
 
 ### Screenshots
 
@@ -28,4 +28,3 @@ Distributed under the Eclipse Public License, the same as Clojure.
 
 
 [![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/rogerallen/qeom/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
-
