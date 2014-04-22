@@ -22,9 +22,6 @@ sketches are dynamic, but here is a taste:
 
 ### License
 
-Copyright © 2013 Roger Allen
+Copyright © 2013-2014 Roger Allen
 
 Distributed under the Eclipse Public License, the same as Clojure.
-
-
-[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/rogerallen/qeom/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
