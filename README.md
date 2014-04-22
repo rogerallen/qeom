@@ -1,6 +1,6 @@
 # qeom
 
-art via [quil](https://github.com/quil/quil) inspired by [geometrydaily](http://geometrydaily.tumblr.com/).
+art via [quil](https://github.com/quil/quil) inspired by [geometrydaily](http://geometrydaily.tumblr.com/) and [PATAKK](http://patakk.tumblr.com/).
 
 ### Usage
 
