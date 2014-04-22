@@ -4,11 +4,13 @@
 (ns qeom.q000
   (:use quil.core))
 
+(set! *warn-on-reflection* true)
+
 (defn fract [v]
   (- v (int v)))
 
-(defn random-int [a b]
-  (int (random a b)))
+(defn random-long ^long [a b]
+  (long (random a b)))
 
 (defn random-bool []
   (= 1 (int (random 0 2))))
@@ -20,7 +22,7 @@
   (stroke-weight 0))
 
 (defn random-fill []
-  (case (random-int 0 4)
+  (case (random-long 0 4)
     0 (fill  28  38  28)
     1 (fill 109 127  94)
     2 (fill  63  68  71)
@@ -28,7 +30,7 @@
 
 (defn random-xy [d]
   (let [rf (if (random-bool) + -)]
-    (rf (* 10 (random-int 0 90)) d)))
+    (rf (* 10 (random-long 0 90)) d)))
 
 (defn draw []
   (let [ms (/ (millis) 10000)
