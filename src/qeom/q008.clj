@@ -2,23 +2,30 @@
 (ns qeom.q008
   (:require [quil.core :refer :all]))
 
-(defonce toon (atom nil))
-
 (defn setup []
   (no-stroke)
   (fill 204)
-  (reset! toon (load-shader "src/shaders/ToonFrag.glsl"
+  (set-state! :toon (load-shader "src/shaders/ToonFrag.glsl"
                             "src/shaders/ToonVert.glsl"))
-  (.set @toon "fraction" (float 1.0))) ;; note conversion to float
+  (.set (state :toon) "fraction" (float 1.0))) ;; note conversion to float
 
 (defn draw []
-  (shader @toon)
+  (shader (state :toon))
   (background 0)
   (let [dir-y (* (- (/ (mouse-y) (height)) 0.5) 2)
         dir-x (* (- (/ (mouse-x) (width)) 0.5) 2)]
     (directional-light 204 204 204 (- dir-x) (- dir-y) -1.0)
-    (translate (/ (width) 2) (/ (height) 2))
-    (sphere 120)))
+    (dorun
+     (map (fn [[i j]]
+            (let [x (* (width) (/ i 5.0))
+                  y (* (height) (/ j 5.0))
+                  dx (/ (width) (* 2 5.0))
+                  dy (/ (height) (* 2 5.0))]
+              (push-matrix)
+              (translate (+ x dx) (+ y dy))
+              (sphere 50)
+              (pop-matrix)))
+          (for [i (range 5) j (range 5)] [i j])))))
 
 (defn run [title]
   (defsketch doodle
