@@ -6,7 +6,7 @@ art via [quil](https://github.com/quil/quil) inspired by [geometrydaily](http://
 
 lein run <i>number</i>
 
-0 &lt;= <i>number</i> &lt;= 7
+0 &lt;= <i>number</i> &lt;= 8
 
 ### Screenshots
 
