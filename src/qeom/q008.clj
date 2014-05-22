@@ -6,7 +6,7 @@
   (no-stroke)
   (fill 204)
   (set-state! :toon (load-shader "src/shaders/ToonFrag.glsl"
-                            "src/shaders/ToonVert.glsl"))
+                                 "src/shaders/ToonVert.glsl"))
   (.set (state :toon) "fraction" (float 1.0))) ;; note conversion to float
 
 (defn draw []

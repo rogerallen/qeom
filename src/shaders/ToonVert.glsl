@@ -1,3 +1,4 @@
+/* example from http://www.processing.org/tutorials/pshader/ */
 uniform mat4 transform;
 uniform mat3 normalMatrix;
 uniform vec3 lightNormal;
