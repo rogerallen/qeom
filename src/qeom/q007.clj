@@ -44,11 +44,10 @@
 (defn draw3 [[x y dx dy] w]
   (let [x1 x
         y1 y
-        x2 (+ x (* 1.51 dx (- w 8)))
-        y2 (+ y (* 1.51 dy (- w 8)))
-        x3 (+ x (* 1.51 dy (- w 8)))
-        y3 (+ y (* 1.51 dx (- w 8)))
-        ]
+        x2 (+ x (* 1.51 dx w))
+        y2 (+ y (* 1.51 dy w))
+        x3 (+ x (* 1.51 dy w))
+        y3 (+ y (* 1.51 dx w))]
     (stroke-weight (* 2 (/ w (+ WIDTH WIDTH-INC))))
     (fill 230)
     (ellipse x1 y1 w w)
