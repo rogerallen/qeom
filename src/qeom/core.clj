@@ -9,7 +9,7 @@
   ;; run the appropriate sketch
   (let [nstr     (if (pos? (count args))
                    (first args)
-                   (str (rand-int 8))) ;; <-- ADJUST WHEN ADDING NEW SKETCHES
+                   (str (rand-int 10))) ;; <-- ADJUST WHEN ADDING NEW SKETCHES
         n        (try (read-string nstr)
                       (catch NumberFormatException e 0))
         n-ns-str (format "q%03d" n)
