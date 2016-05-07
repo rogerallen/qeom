@@ -1,12 +1,12 @@
 # qeom
 
-art via [quil](https://github.com/quil/quil) inspired by [geometrydaily](http://geometrydaily.tumblr.com/) and [PATAKK](http://patakk.tumblr.com/).
+art via [quil](https://github.com/quil/quil) inspired by [geometrydaily](http://geometrydaily.tumblr.com/), [PATAKK](http://patakk.tumblr.com/) and others.
 
 ### Usage
 
 lein run <i>number</i>
 
-0 &lt;= <i>number</i> &lt;= 8
+0 &lt;= <i>number</i> &lt;= 9
 
 ### Screenshots
 
@@ -22,6 +22,6 @@ sketches are dynamic, but here is a taste:
 
 ### License
 
-Copyright © 2013-2014 Roger Allen
+Copyright © 2013-2016 Roger Allen
 
 Distributed under the Eclipse Public License, the same as Clojure.
